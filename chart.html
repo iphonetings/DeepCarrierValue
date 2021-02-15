@@ -1,0 +1,128 @@
+<html><head>
+	<title>Stacked Bar Chart with Groups</title>
+	<script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://www.chartjs.org/dist/2.9.4/Chart.min.js"></script>
+	<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+
+<body>
+	<div style="width: 75%"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+		<canvas id="canvas" style="display: block; width: 466px; height: 233px;" width="466" height="233" class="chartjs-render-monitor"></canvas>
+	</div>
+	<script>
+var barChartData = {
+  labels: [
+    "Monthly Spend",
+    "Data Limit",
+    "Up-Front Cost",
+    "24mo Total Spend",
+  ],
+  datasets: [
+  	{
+      label: "Current",
+      backgroundColor: "yellow",
+      borderColor: "orange",
+      borderWidth: 1,
+      data: [49, 60, 0, 2875]
+    },
+    {
+      label: "Optus 550",
+      backgroundColor: "lightgreen",
+      borderColor: "green",
+      borderWidth: 1,
+      data: [65, 80, 1149, 3259]
+    },
+    {
+      label: "Optus Small",
+      backgroundColor: "green",
+      borderColor: "green",
+      borderWidth: 1,
+      data: [39, 10, 0, 2635]
+    },
+    {
+      label: "Optus Medium",
+      backgroundColor: "darkgreen",
+      borderColor: "green",
+      borderWidth: 1,
+      data: [49, 60, 0, 2875]
+    },
+	{
+      label: "Telstra Small",
+      backgroundColor: "lightblue",
+      borderColor: "blue",
+      borderWidth: 1,
+      data: [65, 80, 1149, 3259]
+    },
+    {
+      label: "Telstra Medium",
+      backgroundColor: "blue",
+      borderColor: "blue",
+      borderWidth: 1,
+      data: [39, 10, 0, 2635]
+    },
+    {
+      label: "Voda Lite",
+      backgroundColor: "pink",
+      borderColor: "red",
+      borderWidth: 1,
+      data: [49, 60, 0, 2875]
+    },
+	{
+      label: "Voda Lite+",
+      backgroundColor: "red",
+      borderColor: "red",
+      borderWidth: 1,
+      data: [49, 60, 0, 2875]
+    },
+	{
+      label: "Voda Lite",
+      backgroundColor: "brown",
+      borderColor: "red",
+      borderWidth: 1,
+      data: [49, 60, 0, 2875]
+    }
+  ]
+};
+
+var chartOptions = {
+  responsive: false,
+  legend: {
+    position: "top"
+  },
+  title: {
+    display: true,
+    text: "Deep Carrier Value"
+  },
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+      }
+    }]
+  }
+}
+
+window.onload = function() {
+  var ctx = document.getElementById("canvas").getContext("2d");
+  window.myBar = new Chart(ctx, {
+    type: "bar",
+    data: barChartData,
+    options: {
+		animation:false
+		}
+		
+	
+  });
+};
+	</script>
+
+
+
+</body></html>
