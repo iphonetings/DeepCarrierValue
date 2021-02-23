@@ -123,7 +123,7 @@ window.chartColors = {
 		}
 	};
 
-	// DEPRECATED
+	// NOT USEFUL
 	window.randomScalingFactor = function() {
 		return Math.round(Samples.utils.rand(-100, 100));
 	};
@@ -132,7 +132,7 @@ window.chartColors = {
 
 	Samples.utils.srand(Date.now());
 
-	// Google Analytics
+	// Google Analytics Disabled
 	/* eslint-disable */
 	if (document.location.hostname.match(/^(www\.)?chartjs\.org$/)) {
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
